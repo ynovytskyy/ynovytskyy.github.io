@@ -4,6 +4,38 @@ title:  "Welcome to Jekyll!"
 date:   2018-02-19 22:12:50 -0500
 categories: jekyll update
 ---
+
+# This is a title
+This is some ordinary text paragraph. lasdkfalksdf asdlfkasd asldfm asdflaskdmf asdflkamsdlkf asdlkfmasld falsdkfmas dfalsdkfsld f
+
+# This is the next section
+lamsdlkm aslkdma sdlaksd aslkda sld alskd alksd alskndlkas dalsdk alskdnlaksd asldk alskd asld alks d
+- some important bullet
+- some other bullet
+
+## Next is some **Python** code example
+This is an example of a plain text paragraph, but the following paragraph should be a pre-formatted `Python` code.
+```Python
+for item in range(0, 30):
+  print('hello %s' % item)
+```
+
+
+
+
+
+
+
+
+== test2
+=== test3
+
+- bullet
+- bullet2
+
+
+
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
