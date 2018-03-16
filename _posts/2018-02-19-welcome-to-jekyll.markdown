@@ -1,11 +1,17 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Setting up blog with GitHub Pages and Jekyll"
 date:   2018-02-19 22:12:50 -0500
 categories: jekyll update
 ---
 
-# This is a title
+# Setting up blog with GitHub Pages and Jekyll
+Roughly following this guide: https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
+
+```bash
+bundle exec jekyll serve
+```
+
 This is some ordinary text paragraph. lasdkfalksdf asdlfkasd asldfm asdflaskdmf asdflkamsdlkf asdlkfmasld falsdkfmas dfalsdkfsld f
 
 # This is the next section
@@ -15,7 +21,7 @@ lamsdlkm aslkdma sdlaksd aslkda sld alskd alksd alskndlkas dalsdk alskdnlaksd as
 
 ## Next is some **Python** code example
 This is an example of a plain text paragraph, but the following paragraph should be a pre-formatted `Python` code.
-```Python
+```python
 for item in range(0, 30):
   print('hello %s' % item)
 ```
