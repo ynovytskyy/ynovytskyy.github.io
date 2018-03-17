@@ -2,7 +2,6 @@
 layout: post
 title:  "Setting up blog with GitHub Pages and Jekyll"
 date:   2018-02-19 22:12:50 -0500
-categories: jekyll update
 ---
 
 # Setting up blog with GitHub Pages and Jekyll
@@ -11,6 +10,33 @@ Roughly following this guide: https://help.github.com/articles/setting-up-your-g
 ```bash
 bundle exec jekyll serve
 ```
+
+Following the setup of the `so-simple-theme` at <https://github.com/mmistakes/so-simple-theme>
+
+Modify `_config.yml` in the root of you GitHub Pages Jekyll site to contain:
+```yml
+remote_theme: "mmistakes/so-simple-theme"
+disqus:
+  shortname: ynovytskyy
+```
+
+# Choose and apply Jekyll Theme
+GitHub Pages supports official and third-party themes. They are applied in slightly different way.
+- GitHub Pages Supported Themes <https://pages.github.com/themes/>
+- A list of 3rd party themes on GitHub <https://github.com/topics/jekyll-theme>
+Themes I liked:
+- Cayman nice except colors and a big header <https://pages-themes.github.io/cayman/>
+- Leap Day not good, but nice code blocks <https://pages-themes.github.io/leap-day/>
+- Minima not bad but too simple <https://jekyll.github.io/minima/>
+- Minimal kinda nice, but two columns, too simplistic <https://pages-themes.github.io/minimal/>
+- Modernist nice except colors <https://pages-themes.github.io/modernist/>
+- **3rd party**
+- so-simple-theme <https://mmistakes.github.io/so-simple-theme/markup-syntax-highlighting/>
+- <https://deanattali.com/beautiful-jekyll/>
+- <https://mmistakes.github.io/minimal-mistakes/>
+
+# Add Disqus comments
+
 
 This is some ordinary text paragraph. lasdkfalksdf asdlfkasd asldfm asdflaskdmf asdflkamsdlkf asdlkfmasld falsdkfmas dfalsdkfsld f
 
