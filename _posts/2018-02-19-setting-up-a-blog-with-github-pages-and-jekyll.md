@@ -9,6 +9,7 @@ date:   2018-02-19 22:12:50 -0500
 - Set up a Jekyll and Jekyll project
 - Choose a themes
 - Configure DNS
+- Add DISQUS comments
 
 > **Prerequisites:** GitHub account and Git client of your choice (instructions use command line git)
 
@@ -65,97 +66,41 @@ While Jekyll is running locally you can make changes to your site and it will pi
 Make sure that you are in the root directory of your local Jekyll site repository and create a post as an `.md` file using the following command or your favorite text editor:
 ```bash
 #in the root directory of your local Jekyll site
-cat <<EOT >> _posts/greetings.txt
+cat <<EOT >> _posts/2018-02-19-my-first-post.md
+---
+layout: post
+title:  "My first post"
+---
 # My first awesome post
 How cool is that?
-- MD - easy to read as plain text
-- And **beautiful** when rendered as website
-- And here's [how to do it](http://www.novytskyy.com/2018/02/19/setting-up-a-blog-with-github-pages-and-jekyll.html "Setting up a blog with GitHub Pages and Jekyll")
-
+- Use [Markdown!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+  - *Easy to create* as plain text
+  - And **beautiful** when rendered as website
+- [Here's how we did it](http://www.novytskyy.com/2018/02/19/setting-up-a-blog-with-github-pages-and-jekyll.html "Setting up a blog with GitHub Pages and Jekyll")
 EOT
 ```
 
+# Choose a themes
+GitHub Pages supports official and third-party themes. They are applied in slightly different way.
+- GitHub Pages Supported Themes <https://pages.github.com/themes/>
+- A list of 3rd party themes on GitHub <https://github.com/topics/jekyll-theme>
 
-
-
-
-
-
-
-
-Following the setup of the `so-simple-theme` at <https://github.com/mmistakes/so-simple-theme>
-
+## Apply and configure `mmistakes/so-simple-theme`
 Modify `_config.yml` in the root of you GitHub Pages Jekyll site to contain:
 ```yml
 remote_theme: "mmistakes/so-simple-theme"
+```
+Additional setup for the `so-simple-theme` can be found at <https://github.com/mmistakes/so-simple-theme>
+
+# Configure DNS
+*TODO*
+
+# Add DISQUS comments
+Create a [DISQUS](https://disqus.com/) account and set up your site.
+Use your `DISQUS` shortname and edit `_config.yml` file in the root directory of your Jekyll site to contain:
+```yml
 disqus:
   shortname: ynovytskyy
 ```
 
-# Choose and apply Jekyll Theme
-GitHub Pages supports official and third-party themes. They are applied in slightly different way.
-- GitHub Pages Supported Themes <https://pages.github.com/themes/>
-- A list of 3rd party themes on GitHub <https://github.com/topics/jekyll-theme>
-Themes I liked:
-- Cayman nice except colors and a big header <https://pages-themes.github.io/cayman/>
-- Leap Day not good, but nice code blocks <https://pages-themes.github.io/leap-day/>
-- Minima not bad but too simple <https://jekyll.github.io/minima/>
-- Minimal kinda nice, but two columns, too simplistic <https://pages-themes.github.io/minimal/>
-- Modernist nice except colors <https://pages-themes.github.io/modernist/>
-- **3rd party**
-- so-simple-theme <https://mmistakes.github.io/so-simple-theme/markup-syntax-highlighting/>
-- <https://deanattali.com/beautiful-jekyll/>
-- <https://mmistakes.github.io/minimal-mistakes/>
-
-# Add Disqus comments
-
-
-This is some ordinary text paragraph. lasdkfalksdf asdlfkasd asldfm asdflaskdmf asdflkamsdlkf asdlkfmasld falsdkfmas dfalsdkfsld f
-
-# This is the next section
-lamsdlkm aslkdma sdlaksd aslkda sld alskd alksd alskndlkas dalsdk alskdnlaksd asldk alskd asld alks d
-- some important bullet
-- some other bullet
-
-## Next is some **Python** code example
-This is an example of a plain text paragraph, but the following paragraph should be a pre-formatted `Python` code.
-```python
-for item in range(0, 30):
-  print('hello %s' % item)
-```
-
-
-
-
-
-
-
-
-== test2
-=== test3
-
-- bullet
-- bullet2
-
-
-
-
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+## Happy and easy blogging!
