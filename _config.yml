@@ -26,6 +26,9 @@ github_username:  ynovytskyy
 # remote_theme: "mmistakes/minimal-mistakes"
 remote_theme: "mmistakes/so-simple-theme"
 
+disqus:
+  shortname: ynovytskyy
+
 author:
   name: Yaroslav Novytskyy
   twitter: ynovytskyy
