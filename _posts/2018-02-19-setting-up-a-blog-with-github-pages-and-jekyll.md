@@ -4,7 +4,6 @@ title:  "Setting up a blog with GitHub Pages and Jekyll"
 date:   2018-02-19 22:12:50 -0500
 ---
 
-# Setting up a blog with GitHub Pages and Jekyll
 - Set up a GitHub Pages repository
 - Set up a Jekyll and Jekyll project
 - Choose a themes
@@ -96,9 +95,12 @@ Additional setup for the `so-simple-theme` can be found at <https://github.com/m
 *TODO*
 
 # Add DISQUS comments
-Create a [DISQUS](https://disqus.com/) account and set up your site.
-Use your `DISQUS` shortname and edit `_config.yml` file in the root directory of your Jekyll site to contain:
+Create a [DISQUS](https://disqus.com/) account and set up your site in Disqus. In your site configuration in Disqus you are going to choose your website name that is going to be your `shortname`. Also you need to enter your `Website URL` that **must match** the domain name that you've chosen to serve your domain under. Otherwise Disqus will not initialize the comment section for security reasons.
+
+Following current example I'm editing `_config.yml` file in the root directory of your Jekyll site to contain and using `ynovytskyy` as my `disqus.shortname` and `https://ynovytskyy.github.io` as my `url` that matches `Website URL` configured in Disqus and the `domain` under which the site will available:
+
 ```yml
+url: "https://ynovytskyy.github.io"
 disqus:
   shortname: ynovytskyy
 ```
