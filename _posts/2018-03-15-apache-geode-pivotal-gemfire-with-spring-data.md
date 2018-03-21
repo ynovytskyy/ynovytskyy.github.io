@@ -1,5 +1,8 @@
-
-# Using Apache Geode (open source version of Pivotal GemFire)
+---
+layout: post
+title:  "Using Apache Geode / Pivotal Gemfire with Spring Data and Spring Boot"
+date:   2018-03-15 23:40:12 -0500
+---
 
 This quick guide will focus on a couple of things:
 - Standing up Apache Geode to run locally as a Docker container for development purposes and all necessary configuration to serve local Java client
