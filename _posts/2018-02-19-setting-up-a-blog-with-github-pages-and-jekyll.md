@@ -6,8 +6,8 @@ date:   2018-02-19 22:12:50 -0500
 
 - Set up a GitHub Pages repository
 - Set up a Jekyll and Jekyll project
-- Choose a themes
-- Configure DNS
+- Choose and setup a themes
+- Configure custom domain
 - Add DISQUS comments
 - Future steps
 
@@ -78,7 +78,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://your-repo-name.gihtub.io" # or your custom domain, e.g. http://your-name.com
+url: "https://git-username.github.io" # or your custom domain, e.g. http://your-name.com
 twitter_username: jekyllrb
 github_username:  jekyll
 ```
@@ -101,6 +101,8 @@ How cool is that?
 EOT
 ```
 
+**Don't forget to push your changes to GitHub**
+
 # Choose a themes
 GitHub Pages supports official and third-party themes. They are applied in slightly different way.
 - GitHub Pages Supported Themes <https://pages.github.com/themes/>
@@ -122,8 +124,20 @@ Put your author picture in `./images/author.jpg` relative to the root folder, `S
 
 Additional setup for the `so-simple-theme` can be found at <https://github.com/mmistakes/so-simple-theme>
 
-# Configure DNS
-*TODO*
+# Configure custom domain
+You will need your domain name registered and have access to DNS configuration for it. Let's assume your custom domain is `your-name.com` and your GitHub Pages domain is `git-username.github.io` (the one that you get anyways with GitHub Pages).
+
+Go to your registrar's DNS configuration for `your-name.com` to do the following:
+- add a record with type `ALIAS` or `ANAME` and `git-username.github.io` as the value
+- add a record with type `CNAME`, `www` subdomain and `git-username.github.io` as the value
+
+Add a file name `CNAME` in the root of your site with your custom domain:
+```bash
+echo 'www.your-name.com' > CNAME
+```
+Git add / commit / push.
+
+**DNS changes may take time to propagate**
 
 # Add DISQUS comments
 Create a [DISQUS](https://disqus.com/) account and set up your site in Disqus. In your site configuration in Disqus you are going to choose your website name that is going to be your `shortname`. Also you need to enter your `Website URL` that **must match** the domain name that you've chosen to serve your domain under. Otherwise Disqus will not initialize the comment section for security reasons.
