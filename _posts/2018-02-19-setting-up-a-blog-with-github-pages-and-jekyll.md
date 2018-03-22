@@ -14,21 +14,25 @@ date:   2018-02-19 22:12:50 -0500
 > **Prerequisites:** GitHub account and Git client of your choice (instructions use command line git)
 
 # Set up a GutHub Pages repository
-Go to <https://pages.github.com/> and follow the guide for user/organization site or project site. I choose a user site, so I create a new repository called `ynovytskyy.github.io` in my GitHub account since my username is `ynovytskyy`. If I was using a payed account, I could choose a **Private** repo.
+Go to <https://pages.github.com/> and follow the guide for user/organization site or project site. I choose a user site. Assuming `git-username` is your git username, create a new repository called `git-username.github.io` in your GitHub account. If you have a payed account, you can choose a **Private** repo.
 I'm going to use a command line Git client in `bash` shell:
+
 ```bash
 mkdir ~/work
 cd ~/work
 #the following line might differ based on your git setup preference
-git clone git@github.com:ynovytskyy/ynovytskyy.github.io.git
-cd ynovytskyy.github.io/
+git clone git@github.com:git-username/git-username.github.io.git
+cd git-username.github.io/
 echo "hello from GitHub Pages" > index.html
 git add .
 git commit -m "added index.html"
 git push
-open https://ynovytskyy.github.io
+open https://git-username.github.io
 ```
-At this point GitHub Pages is serving your static website from the master branch of your repository. This might be all that you need. If it is, you could just go to **Configure DNS** section if you want to serve your site under your custom domain and continue to evolve your site in the repository.
+
+At this point GitHub Pages is serving your static website from the master branch of your repository. If you'd like to evolve your website as static HTML site, this might be all that you need. You can also go to **Configure DNS** section if you want to serve your site under your custom domain.
+
+If you choose to write your pages/posts in markdown and have GitHub Pages generate a website continue reading on setting up Jekyll.
 
 # Set up a Jekyll and Jekyll project
 I choose to use Jekyll to handle my GitHub Pages website. This is for several reasons:
@@ -103,11 +107,19 @@ GitHub Pages supports official and third-party themes. They are applied in sligh
 - A list of 3rd party themes on GitHub <https://github.com/topics/jekyll-theme>
 
 ## Apply and configure a theme
-So I've chosen the [So Simple](https://mmistakes.github.io/so-simple-theme/) theme, with instructions available [here](https://github.com/mmistakes/so-simple-theme).
+So I've chosen the [So Simple](https://mmistakes.github.io/so-simple-theme/) theme.
 Modify `_config.yml` in the root of you GitHub Pages Jekyll site to contain:
+
 ```yml
 remote_theme: "mmistakes/so-simple-theme"
+author:
+  name: Your Name
+  twitter: twitter-username
+  picture: /images/author.jpg
 ```
+
+Put your author picture in `./images/author.jpg` relative to the root folder, `So Simple` theme will style it in a nice circle.
+
 Additional setup for the `so-simple-theme` can be found at <https://github.com/mmistakes/so-simple-theme>
 
 # Configure DNS
@@ -116,12 +128,12 @@ Additional setup for the `so-simple-theme` can be found at <https://github.com/m
 # Add DISQUS comments
 Create a [DISQUS](https://disqus.com/) account and set up your site in Disqus. In your site configuration in Disqus you are going to choose your website name that is going to be your `shortname`. Also you need to enter your `Website URL` that **must match** the domain name that you've chosen to serve your domain under. Otherwise Disqus will not initialize the comment section for security reasons.
 
-Following current example I'm editing `_config.yml` file in the root directory of your Jekyll site to contain and using `ynovytskyy` as my `disqus.shortname` and `https://ynovytskyy.github.io` as my `url` that matches `Website URL` configured in Disqus and the `domain` under which the site will available:
+Following current example I'm editing `_config.yml` file in the root directory of your Jekyll site to contain and using `disqus-username` as my `disqus.shortname` and `https://git-username.github.io` as my `url` that matches `Website URL` configured in Disqus and the `domain` under which the site will available:
 
 ```yml
-url: "https://ynovytskyy.github.io"
+url: "https://git-username.github.io"
 disqus:
-  shortname: ynovytskyy
+  shortname: disqus-username
 ```
 
 # Future steps
