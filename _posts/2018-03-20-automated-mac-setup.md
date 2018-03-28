@@ -23,6 +23,7 @@ brew cask install iterm2
 brew cask install shiftit
 brew cask install slack
 brew cask install atom
+brew cask install trolcommander
 brew cask install google-chrome
 brew cask install viber
 ```
@@ -85,6 +86,12 @@ flycut         macdown        shiftit        sublime-text   zoomus
   - <https://brew.sh/analytics/install-on-request/>
 - Homebrew Cask - “To install, drag this icon…” no more! - <https://caskroom.github.io/>
 - Bash-it - <https://github.com/Bash-it/bash-it>
+- Another customization of terminal with `zsh` - <https://medium.com/@elviocavalcante/5-steps-to-improve-your-terminal-appearance-on-mac-osx-f58b20058c84>
+
+## Some other usefull apps to mention:
+- <https://bjango.com/mac/istatmenus/>
+- <https://seense.com/menubarstats/> - ? 5 USD / 6.66 CAD
+- <https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/>
 
 # Additional notes
 Also found the following script to install an app from a `*.dmg` in a a scripted way. Haven't used it yet though.
