@@ -38,6 +38,19 @@ open Docker.dmg
 docker run hello-world
 ```
 
+## Other useful tools
+### SSH FS to be able to mount filesystem over SSH
+```bash
+brew cask install osxfuse
+brew install sshfs
+#sshfs root@10.0.1.1:/var/www ~/Documents/mount
+```
+### Google Cloud SDK and command line
+```bash
+brew cask install google-cloud-sdk
+```
+
+
 ## And/or use Pivotal goodies
 ```bash
 mkdir -p ~/work/tools
@@ -88,7 +101,7 @@ flycut         macdown        shiftit        sublime-text   zoomus
 - Bash-it - <https://github.com/Bash-it/bash-it>
 - Another customization of terminal with `zsh` - <https://medium.com/@elviocavalcante/5-steps-to-improve-your-terminal-appearance-on-mac-osx-f58b20058c84>
 
-## Some other usefull apps to mention:
+## Some other useful apps to mention:
 - <https://bjango.com/mac/istatmenus/>
 - <https://seense.com/menubarstats/> - ? 5 USD / 6.66 CAD
 - <https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/>

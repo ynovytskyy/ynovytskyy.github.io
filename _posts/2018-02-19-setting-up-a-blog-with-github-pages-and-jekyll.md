@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting up a blog with GitHub Pages and Jekyll"
-date:   2018-02-19 22:12:50 -0500
+date:   2018-02-19
 ---
 
 - Set up a GitHub Pages repository
