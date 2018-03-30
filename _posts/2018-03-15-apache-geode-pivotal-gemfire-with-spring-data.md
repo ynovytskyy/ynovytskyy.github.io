@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using Apache Geode / Pivotal Gemfire with Spring Data and Spring Boot"
-date:   2018-03-15 23:40:12 -0500
+date:   2018-03-15
 ---
 
 This quick guide will focus on a couple of things:
