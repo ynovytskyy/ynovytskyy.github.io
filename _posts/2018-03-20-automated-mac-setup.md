@@ -26,16 +26,8 @@ brew cask install atom
 brew cask install trolcommander
 brew cask install google-chrome
 brew cask install viber
-```
-
-## Install latest Docker CE for Mac
-Semi-manual - didn't find cask for this edition:
-```bash
-#get and install latest Docker CE for Mac
-wget https://download.docker.com/mac/stable/Docker.dmg
-open Docker.dmg
-#install manually, then test in terminal
-docker run hello-world
+brew cask install docker
+open /Applications/Docker.app
 ```
 
 ## Other useful tools
@@ -48,8 +40,8 @@ brew install sshfs
 ### Google Cloud SDK and command line
 ```bash
 brew cask install google-cloud-sdk
+brew install kubectl
 ```
-
 
 ## And/or use Pivotal goodies
 ```bash
