@@ -27,7 +27,7 @@ brew cask install trolcommander
 brew cask install google-chrome
 brew cask install viber
 brew cask install docker
-open /Applications/Docker.app
+open /Applications/Docker.app #need to start it to set it up
 ```
 
 ## Other useful tools
