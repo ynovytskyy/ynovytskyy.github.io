@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Spring Boot Admin in Kubernetes"
-published: false
 ---
+[Spring Boot Admin](https://github.com/codecentric/spring-boot-admin) is a
+Codecentric's community project that provides an admin interface for [Spring Boot ®](http://projects.spring.io/spring-boot/) applications. To an extent it might serve as the missing tool in environments like Kubernetes or Docker Swarm that are great container orchestration platforms but are missing UIs for insight into services state, monitoring and debugging.
 
 - Prerequisites
   - Tools
@@ -12,6 +13,7 @@ published: false
   - Setup Eureka Service Registry
   - Setup Spring Boot Admin
   - Deploy a demo micro-service
+- Experimenting
 
 # Prerequisites
 We need a Kubernetes cluster, Docker to build our images, Docker repository to push you custom container images to, and to pull from when you deploy.
@@ -67,6 +69,7 @@ Lats two command let us see Pods and Services deployed. I've kept it simple and 
 ```bash
 ip=$(kubectl get svc -o=json | jq -r '.items[] | select(.metadata.name == "eureka").status.loadBalancer.ingress[0].ip'); open "http://$ip:8761"
 ```
+> **Note:** Eureka is exposed only for the purpose of this example.
 
 ## Setup Spring Boot Admin
 Now we need to build Spring Boot Admin application - Maven project first to produce Spring Boot executable jar, then build a Docker image of it.
@@ -100,35 +103,22 @@ cd demo-micro-service
 docker build -t demo-micro-service .
 cd ..
 docker tag demo-micro-service gcr.io/cso-ynovytskyy/demo-micro-service
-gcloud docker -- push gcr.io/cso-ynovytskyy/demo-micro-service ```
+gcloud docker -- push gcr.io/cso-ynovytskyy/demo-micro-service
 
-
-
-
-
-
-
+kubectl apply -f k8s-spring-boot-admin.yml
+kubeclt get svc
+#when service's ready use external IP and port 8080 or...
+ip=$(kubectl get svc -o=json | jq -r '.items[] | select(.metadata.name == "demo-micro-service").status.loadBalancer.ingress[0].ip'); open "http://$ip:8080"
 ```
-#requirements JDK, node, docker, Google Cloud SDK, gcloud, kubectl
-docker build --no-cache -f src/main/docker/Dockerfile -t sba-server-eureka .
 
-#build Spring Boot Admin service
-git clone git@github.com:codecentric/spring-boot-admin.git
-cd spring-boot-admin
-mvnw install
-
-#gcloud projects list - to find out project id
-gcloud beta auth configure-docker
-#?? gcloud components install docker-credential-gcr
-
-cd spring-boot-admin-samples/spring-boot-admin-sample-eureka
-docker build --no-cache -f src/main/docker/Dockerfile -t sba-server-eureka .
-cd ../..
-docker tag sba-server-eureka gcr.io/cso-ynovytskyy/sba-server-eureka
-
-#doc says: docker push gcr.io/cso-ynovytskyy/sba-server-eureka
-gcloud docker -- push gcr.io/cso-ynovytskyy/sba-server-eureka
-
-kubectl scale deployment micro-service-deployment --replicas=3
-
+# Experimenting
+Open Spring Boot Admin and check that it show 2 instances of the `demo-micro-service` application. You can check variety of information about these instances.
+Now let's scale `demo-micro-service` to 3 instances and observe Spring Boot Admin figuring out that a new instance appeared (using Eureka Service Registry).
+```bash
+ip=$(kubectl get svc -o=json | jq -r '.items[] | select(.metadata.name == "admin").status.loadBalancer.ingress[0].ip'); open "http://$ip:8080"
+kubectl get deployment
+kubectl scale deployment demo-micro-service --replicas=3
+kubectl get pod
 ```
+
+### And we are done here!
