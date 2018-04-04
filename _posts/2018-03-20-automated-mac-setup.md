@@ -28,15 +28,21 @@ brew cask install google-chrome
 brew cask install viber
 brew cask install docker
 open /Applications/Docker.app #need to start it to set it up
+
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+~/.bash_it/install.sh
 ```
+I also manually install MenuMeters adaptation for modern MacOS X from <https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/>
 
 ## Other useful tools
+
 ### SSH FS to be able to mount filesystem over SSH
 ```bash
 brew cask install osxfuse
 brew install sshfs
 #sshfs root@10.0.1.1:/var/www ~/Documents/mount
 ```
+
 ### Google Cloud SDK and command line
 ```bash
 brew cask install google-cloud-sdk
@@ -92,11 +98,6 @@ flycut         macdown        shiftit        sublime-text   zoomus
 - Homebrew Cask - “To install, drag this icon…” no more! - <https://caskroom.github.io/>
 - Bash-it - <https://github.com/Bash-it/bash-it>
 - Another customization of terminal with `zsh` - <https://medium.com/@elviocavalcante/5-steps-to-improve-your-terminal-appearance-on-mac-osx-f58b20058c84>
-
-## Some other useful apps to mention:
-- <https://bjango.com/mac/istatmenus/>
-- <https://seense.com/menubarstats/> - ? 5 USD / 6.66 CAD
-- <https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/>
 
 # Additional notes
 Also found the following script to install an app from a `*.dmg` in a a scripted way. Haven't used it yet though.
