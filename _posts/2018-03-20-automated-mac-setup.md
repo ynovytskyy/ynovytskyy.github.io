@@ -13,10 +13,8 @@ Will require to enter your password during the process.
 brew tap caskroom/cask
 brew tap caskroom/version
 brew tap jcgay/jcgay
-brew tap cloudfoundry/tap
-brew tap pivotal/tap
 
-brew install wget jq openssl git maven-deluxe bosh-cli terraform cf-cli
+brew install wget jq openssl git maven-deluxe
 
 brew cask install java8
 brew cask install iterm2
@@ -31,6 +29,12 @@ open /Applications/Docker.app #need to start it to set it up
 
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh
+
+#Kubernetes, Google Cloud Platform (GCP), Pivotal Cloud Foundry (PCF), BOSH, Terraform
+brew tap cloudfoundry/tap
+brew tap pivotal/tap
+brew install kubectl cf-cli bosh-cli terraform
+brew cask install google-cloud-sdk
 ```
 I also manually install MenuMeters adaptation for modern MacOS X from <https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/>
 
