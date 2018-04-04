@@ -11,7 +11,7 @@ published: false
 - Spring Boot Admin with Eureka
   - Setup Eureka Service Registry
   - Setup Spring Boot Admin
-  - Deploying demo micro-service
+  - Deploy a demo micro-service
 
 # Prerequisites
 We need a Kubernetes cluster, Docker to build our images, Docker repository to push you custom container images to, and to pull from when you deploy.
@@ -50,6 +50,7 @@ Now ready to roll on Kubernetes level of abstraction with `kubectl` CLI.
 # Approaches to use Spring Boot Admin
 
 # Spring Boot Admin with Eureka
+Let's go and `git clone` some prepared code, docker image descriptors and k8s manifests for our Spring Boot Admin experiment:
 ```bash
 git clone git@github.com:ynovytskyy/spring-boot-admin-in-kubernetes.git
 cd spring-boot-admin-in-kubernetes
@@ -68,6 +69,44 @@ ip=$(kubectl get svc -o=json | jq -r '.items[] | select(.metadata.name == "eurek
 ```
 
 ## Setup Spring Boot Admin
+Now we need to build Spring Boot Admin application - Maven project first to produce Spring Boot executable jar, then build a Docker image of it.
+```bash
+cd spring-boot-admin
+./mvnw clean package
+docker build -t spring-boot-admin .
+cd ..
+```
+Now we have Docker container image of Spring Boot Admin in our local Docker image repo. Now let's push to it to `GCP Container Registry (GCR)`. Tag your image according to <https://cloud.google.com/container-registry/docs/pushing-and-pulling#choosing_a_registry_name>
+```bash
+gcloud beta auth configure-docker # in the future the "beta" piece should not be needed
+
+docker tag spring-boot-admin gcr.io/cso-ynovytskyy/spring-boot-admin
+gcloud docker -- push gcr.io/cso-ynovytskyy/spring-boot-admin #GCP doc says to use "docker push <imge-tag>" but it didn't work for me
+```
+So the `spring-boot-admin` is now pushed to Google Container Registry and can be user from Kubernetes manifest.
+```bash
+#in the root of the repo
+kubectl apply -f k8s-spring-boot-admin.yml
+kubeclt get svc
+#when service's ready use external IP and port 8080 or...
+ip=$(kubectl get svc -o=json | jq -r '.items[] | select(.metadata.name == "admin").status.loadBalancer.ingress[0].ip'); open "http://$ip:8080"
+```
+
+## Deploy a demo micro-service
+It's time to deploy a demo micro-service application and see how Spring Boot Admin helps to get information about its instances.
+```bash
+cd demo-micro-service
+./mvnw clean package
+docker build -t demo-micro-service .
+cd ..
+docker tag demo-micro-service gcr.io/cso-ynovytskyy/demo-micro-service
+gcloud docker -- push gcr.io/cso-ynovytskyy/demo-micro-service ```
+
+
+
+
+
+
 
 ```
 #requirements JDK, node, docker, Google Cloud SDK, gcloud, kubectl
