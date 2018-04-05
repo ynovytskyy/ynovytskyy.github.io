@@ -1,0 +1,61 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+sitemap: false
+---
+
+@charset "utf-8";
+
+/* Syntax highlighting (base16) colors */
+$baseX0: #d0d0d0 !default; //inline code background color
+$baseX1: #384e55 !default; //inline code font color
+
+$base00: #3A3C42 !default; //eaeaea background
+$base01: #073642 !default;
+$base02: #586e75 !default;
+$base03: #657b83 !default;
+$base04: #738486 !default; //comment
+$base05: #e8e8e2 !default; //586e75 general text
+$base06: #eee8d5 !default;
+$base07: #fdf6e3 !default;
+$base08: #dc322f !default;
+$base09: #cb4b16 !default;
+$base0a: #ffc66d !default; //b58900 function name in definition, cd, echo in bash
+$base0b: #6a8759 !default; //859900
+$base0c: #e8e8e2 !default; //2aa198 operator, etc
+$base0d: #A9B7C6 !default; //268bd2 method names, fields when calling
+$base0e: #CC7832 !default; //6c71c4 keywords
+$base0f: #d33682 !default;
+
+@import "so-simple";
+
+code.highlighter-rouge {
+  margin: 0;
+  padding: 0.2em 0.4em;
+  color: $baseX1;
+  background-color: $baseX0;
+  font-size: 85%;
+  border-radius: 4px;
+}
+
+div.highlighter-rouge {
+  border-radius: 4px;
+}
+
+blockquote {
+  padding: 1em 1.5em;
+}
+
+.highlight {
+  .nb {
+    /* Name.Builtin */ //like cd, echo in bash
+    color: $base0a;
+  }
+  .nf {
+    /* Name.Function */
+    color: $base0a;
+  }
+  .nd {
+    /* Name.Decorator */ //annotations in java
+    color: #bbb529;
+  }
+}

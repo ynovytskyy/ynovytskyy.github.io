@@ -20,7 +20,7 @@ brew cask install java8
 brew cask install iterm2
 brew cask install shiftit
 brew cask install slack
-brew cask install atom
+brew cask install atom #and/or Sublime Text, Textmate
 brew cask install trolcommander
 brew cask install google-chrome
 brew cask install viber

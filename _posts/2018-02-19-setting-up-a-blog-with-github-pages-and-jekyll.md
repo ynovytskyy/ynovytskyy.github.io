@@ -75,10 +75,7 @@ You definitely want to set your site's `title` and `description` used by all the
 ```yml
 title: Your awesome title
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://git-username.github.io" # or your custom domain, e.g. http://your-name.com
 twitter_username: jekyllrb
