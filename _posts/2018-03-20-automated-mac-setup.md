@@ -14,7 +14,9 @@ brew tap caskroom/cask
 brew tap caskroom/version
 brew tap jcgay/jcgay
 
-brew install wget jq openssl git maven-deluxe node
+xcode-select --install
+brew install wget openssl
+brew install maven gradle httpie jq node git
 
 brew cask install java8
 brew cask install iterm2
