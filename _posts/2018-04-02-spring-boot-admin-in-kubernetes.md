@@ -2,6 +2,9 @@
 layout: post
 title:  "Spring Boot Admin in Kubernetes"
 ---
+
+Building applications based on micro-services requires maturity in various areas. One of them is proper insight into application's health and state from operations and development perspective. While some PaaSs provide full-fledged tooling and UI (like Pivotal Cloud Foundry) other focus on providing CLI-level of tooling (e.g. Kuberentes or Docker Swarm). Spring Boot Admin provides this insight via a great UI for your Spring Boot-based Actuator-enabled micro-services. 
+
 [Spring Boot Admin](https://github.com/codecentric/spring-boot-admin) is a
 Codecentric's community project that provides an admin interface for [Spring Boot ®](http://projects.spring.io/spring-boot/) applications. To an extent it might serve as the missing tool in environments like Kubernetes or Docker Swarm that are great container orchestration platforms but are missing UIs for insight into services state, monitoring and debugging.
 
@@ -20,7 +23,7 @@ We need a Kubernetes cluster, Docker to build our images, Docker repository to p
 
 ## Install tools
 ```bash
-#you do need `brew`, if you don't have it yet https://brew.sh
+#you do need `brew`, if you don't have it yet get it at https://brew.sh
 brew tap caskroom/versions
 brew cask install java8
 brew install kubectl jq
@@ -47,9 +50,21 @@ gcloud container clusters get-credentials kub-cluster
 
 kubectl cluster-info
 ```
-Now ready to roll on Kubernetes level of abstraction with `kubectl` CLI.
+Now we are ready to roll on K8s level of abstraction with `kubectl` CLI, but let's take a look at architecture and Spring Boot Admin use cases first.
 
 # Approaches to use Spring Boot Admin
+
+The following is a simple example of an app consisting of two micro-services (each can be scaled independently) running on a platform that provides orchestration, but limited high-level insight into operation of the micro-services.
+![No visibility into micro-services without full PaaS](/images/2018-04-02-1-no-visibility-into-app-instances.png)
+
+Spring Boot Admin (SBA) can provide the missing visibility into your app's health and state as a UI for support engineers, operations and developers. In this simplest case SBA is statically configured to monitor micro-service instances.
+![Spring Boot Admin can be pre-configured to know about micro-service instances](/images/2018-04-02-2-sba-knows-about-app-instances.png)
+
+The previous case is less than ideal for for production environments where dynamic scaling is desired. There are few options to deal with dynamic instances and register them with SBA. If we have a liberty of modifying micro-services we can use SBA Client to register with SBA. In this architecture instances that are spawned dynamically register with SBA and DevOps have immediate insight into them and their state.
+![Micro-services can use SBA client to register with SBA](/images/2018-04-02-3-app-instances-register-with-sba-using-sba-client.png)
+
+For cases when an app uses Service Registry (Eureka or Consul - SBA supports both) and it's either not possible or not desirable to modify micro-services to use SBA Client, SBA can dynamically discover instances to be monitored via the Service Registry.
+![Spring Boot Admin using Service Registry to dynamically discover and monitor micro-service instances](/images/2018-04-02-4-sba-reads-service-registry-to-discover-app-instances.png)
 
 # Spring Boot Admin with Eureka
 Let's go and `git clone` some prepared code, docker image descriptors and k8s manifests for our Spring Boot Admin experiment:
