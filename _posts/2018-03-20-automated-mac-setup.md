@@ -12,11 +12,11 @@ Will require to enter your password during the process.
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 brew tap caskroom/version
-brew tap jcgay/jcgay
 
 xcode-select --install
 brew install wget openssl
 brew install maven gradle httpie jq node git
+brew install mysql
 
 brew cask install java8
 brew cask install iterm2
