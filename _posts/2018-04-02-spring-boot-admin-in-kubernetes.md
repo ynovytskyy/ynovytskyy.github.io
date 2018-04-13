@@ -3,7 +3,7 @@ layout: post
 title:  "Spring Boot Admin in Kubernetes"
 ---
 
-Building applications based on micro-services requires maturity in various areas. One of them is proper insight into application's health and state from operations and development perspective. While some PaaSs provide full-fledged tooling and UI (like Pivotal Cloud Foundry) other focus on providing CLI-level of tooling (e.g. Kuberentes or Docker Swarm). Spring Boot Admin provides this insight via a great UI for your Spring Boot-based Actuator-enabled micro-services. 
+Building applications based on micro-services requires maturity in various areas. One of them is proper insight into application's health and state from operations and development perspective. While some PaaSs provide full-fledged tooling and UI (like Pivotal Cloud Foundry) other focus on providing CLI-level of tooling (e.g. Kuberentes or Docker Swarm). Spring Boot Admin provides this insight via a great UI for your Spring Boot-based Actuator-enabled micro-services.
 
 [Spring Boot Admin](https://github.com/codecentric/spring-boot-admin) is a
 Codecentric's community project that provides an admin interface for [Spring Boot ®](http://projects.spring.io/spring-boot/) applications. To an extent it might serve as the missing tool in environments like Kubernetes or Docker Swarm that are great container orchestration platforms but are missing UIs for insight into services state, monitoring and debugging.
@@ -45,7 +45,7 @@ gcloud projects create cso-ynovytskyy
 gcloud config set project cso-ynovytskyy
 
 #For experiments the following should be enough, so saving some $ here. Other wise use defaults: 3 nodes of `n1-standard-1`
-gcloud container clusters create kub-cluster -m=f1-micro --num-nodes=2
+gcloud container clusters create kub-cluster -m=f1-micro --num-nodes=3
 gcloud container clusters get-credentials kub-cluster
 
 kubectl cluster-info

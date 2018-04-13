@@ -16,9 +16,11 @@ brew tap caskroom/version
 xcode-select --install
 brew install wget openssl
 brew install maven gradle httpie jq node git
+brew install fish
 brew install mysql
 
 brew cask install java8
+brew cask install sourcetree
 brew cask install iterm2
 brew cask install shiftit
 brew cask install slack
