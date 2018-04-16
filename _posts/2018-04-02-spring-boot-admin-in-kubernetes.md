@@ -44,8 +44,8 @@ gcloud config set compute/region us-east1
 gcloud projects create cso-ynovytskyy
 gcloud config set project cso-ynovytskyy
 
-#For experiments the following should be enough, so saving some $ here. Other wise use defaults: 3 nodes of `n1-standard-1`
-gcloud container clusters create kub-cluster -m=f1-micro --num-nodes=3
+#For experiments you can try to use micro instances. I'm using defaults: 3 nodes of `n1-standard-1`
+gcloud container clusters create kub-cluster -m=n1-standard-1 --num-nodes=3
 gcloud container clusters get-credentials kub-cluster
 
 kubectl cluster-info
@@ -94,7 +94,7 @@ cd spring-boot-admin
 docker build -t spring-boot-admin .
 cd ..
 ```
-Now we have Docker container image of Spring Boot Admin in our local Docker image repo. Now let's push to it to `GCP Container Registry (GCR)`. Tag your image according to <https://cloud.google.com/container-registry/docs/pushing-and-pulling#choosing_a_registry_name>
+Now we have Docker container image of Spring Boot Admin in our local Docker image repo. Let's push it to `GCP Container Registry (GCR)`. Tag your image according to <https://cloud.google.com/container-registry/docs/pushing-and-pulling#choosing_a_registry_name>
 ```bash
 gcloud beta auth configure-docker # in the future the "beta" piece should not be needed
 
