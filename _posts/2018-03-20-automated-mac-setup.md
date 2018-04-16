@@ -16,7 +16,6 @@ brew tap caskroom/version
 xcode-select --install
 brew install wget openssl
 brew install maven gradle httpie jq node git
-brew install fish
 brew install mysql
 
 brew cask install java8
@@ -31,9 +30,6 @@ brew cask install viber
 brew cask install docker
 open /Applications/Docker.app #need to start it to set it up
 
-git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-~/.bash_it/install.sh
-
 #Kubernetes, Google Cloud Platform (GCP), Pivotal Cloud Foundry (PCF), BOSH, Terraform
 brew tap cloudfoundry/tap
 brew tap pivotal/tap
@@ -43,6 +39,30 @@ brew cask install google-cloud-sdk
 I also manually install MenuMeters adaptation for modern MacOS X from <https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/>
 
 ## Other useful tools
+
+### Fonts & terminal enhancements. Highly recommended
+```bash
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+#set `Hack Nerd Font` in your terminal
+
+#Bash-it!
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+~/.bash_it/install.sh
+#edit ~/.bash_profile to change theme to `export BASH_IT_THEME='powerline'`
+#https://github.com/Bash-it/bash-it/wiki/Themes#powerline-naked
+nano ~/.bash_profile
+reload
+#or cd into a git repo folder and run the following to try all themes
+BASH_PREVIEW=true reload
+
+#Fish shell - just try it out!!
+brew install fish
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+omf help
+omf install bobthefish
+omf reload
+```
 
 ### SSH FS to be able to mount filesystem over SSH
 ```bash
