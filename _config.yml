@@ -26,6 +26,8 @@ github_username:  ynovytskyy
 # remote_theme: "mmistakes/minimal-mistakes"
 remote_theme: "mmistakes/so-simple-theme"
 
+google_analytics: UA-2714023-5
+
 disqus:
   shortname: ynovytskyy
 
