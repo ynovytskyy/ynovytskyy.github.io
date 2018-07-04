@@ -1,3 +1,8 @@
+---
+layout: post
+title:  "Unpublished template"
+published: false
+---
 
 
 virt-install \
