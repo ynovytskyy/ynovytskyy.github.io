@@ -8,7 +8,7 @@ My ideal setup for my MacBook Pro - single script to run. And the script should 
 
 # My current script
 Will require to enter your password during the process.
-```bash
+```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 brew tap caskroom/version
@@ -41,7 +41,7 @@ I also manually install MenuMeters adaptation for modern MacOS X from <https://m
 ## Other useful tools
 
 ### Fonts & terminal enhancements. Highly recommended
-```bash
+```
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 #set `Hack Nerd Font` in your terminal
@@ -64,21 +64,49 @@ omf install bobthefish
 omf reload
 ```
 
+### VLC and file associations
+```
+brew cask install vlc
+brew install duti
+duti -s org.videolan.vlc .mkv all
+duti -s org.videolan.vlc .avi
+duti -s org.videolan.vlc .mp4
+```
+
+### Transmission and Transmission remote GUI
+```
+brew tap caskroom/cask
+brew cask install transmission-remote-gui
+```
+
+
+
+https://www.android.com/filetransfer/
+
+
+
+
+### EncFS cross-platform and cloud-friendly folder encryption
+```
+brew cask install osxfuse
+brew install encfs
+```
+
 ### SSH FS to be able to mount filesystem over SSH
-```bash
+```
 brew cask install osxfuse
 brew install sshfs
 #sshfs root@10.0.1.1:/var/www ~/Documents/mount
 ```
 
 ### Google Cloud SDK and command line
-```bash
+```
 brew cask install google-cloud-sdk
 brew install kubectl
 ```
 
 ## And/or use Pivotal goodies
-```bash
+```
 mkdir -p ~/work/tools
 cd ~/work/tools
 git clone https://github.com/pivotal/workstation-setup.git
