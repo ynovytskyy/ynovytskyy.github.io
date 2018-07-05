@@ -144,8 +144,6 @@ the boot time.
 Central server `erebor` is running CentOS 6 (yeah, old) in this example
 and therefore needs extra work to configure `tincd` as a service on startup:
 ```bash
-echo 'middle-earth' | sudo tee /etc/tinc/nets.boot
-
 echo 'tincd -n middle-earth' | sudo tee --append /etc/rc.d/rc.local
 
 #and just to start tinc just this time without restarting the server:
@@ -153,9 +151,8 @@ sudo tincd -n middle-earth
 ```
 On `hobbiton` which is Ubuntu 18 it's much simpler out of the box:
 ```bash
-echo 'middle-earth' | sudo tee /etc/tinc/nets.boot
-
-sudo service tinc start
+sudo systemctl enable tinc@middle-earth
+sudo systemctl start tinc@middle-earth
 ```
 
 ## Happy virtual networking!
