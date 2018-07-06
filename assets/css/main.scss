@@ -28,6 +28,28 @@ $base0f: #d33682 !default;
 
 @import "so-simple";
 
+@media (max-width: 64em) {
+  .author-avatar {
+    display: inline;
+    margin-right: 1em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+  }
+}
+
+.page-sidebar .page-share {
+  margin-bottom: 0;
+}
+
+.page-sidebar .page-share a {
+  font-size: 0.9em;
+  color: white;
+  width: 86px;
+  font-weight: normal;
+  padding: 0.2em 0.2em;
+}
+
 code.highlighter-rouge {
   margin: 0;
   padding: 0.2em 0.4em;

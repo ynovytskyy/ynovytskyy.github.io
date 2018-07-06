@@ -149,7 +149,7 @@ echo 'tincd -n middle-earth' | sudo tee --append /etc/rc.d/rc.local
 #and just to start tinc just this time without restarting the server:
 sudo tincd -n middle-earth
 ```
-On `hobbiton` which is Ubuntu 18 it's much simpler out of the box:
+On `hobbiton` which is Ubuntu 18 it's much cleaner out of the box:
 ```bash
 sudo systemctl enable tinc@middle-earth
 sudo systemctl start tinc@middle-earth
