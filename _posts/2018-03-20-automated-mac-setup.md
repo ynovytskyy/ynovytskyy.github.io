@@ -20,11 +20,8 @@ brew install mysql
 
 brew cask install java8
 brew cask install sourcetree
-brew cask install iterm2
-brew cask install shiftit
 brew cask install slack
 brew cask install atom #and/or Sublime Text, Textmate
-brew cask install trolcommander
 brew cask install google-chrome
 brew cask install viber
 brew cask install docker
@@ -36,9 +33,22 @@ brew tap pivotal/tap
 brew install kubectl cf-cli bosh-cli terraform
 brew cask install google-cloud-sdk
 ```
-I also manually install MenuMeters adaptation for modern MacOS X from <https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/>
 
 ## Other useful tools
+
+### Tools
+```
+brew cask install iterm2
+brew cask install shiftit
+brew cask install yujitach-menumeters
+brew cask install trolcommander
+```
+
+### Productivity
+```
+brew cask install evernote
+brew cask install skitch
+```
 
 ### Fonts & terminal enhancements. Highly recommended
 ```
