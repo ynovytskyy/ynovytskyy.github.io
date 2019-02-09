@@ -11,7 +11,7 @@ Will require to enter your password during the process.
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
-brew tap caskroom/version
+brew tap caskroom/versions
 
 xcode-select --install
 brew install wget openssl
