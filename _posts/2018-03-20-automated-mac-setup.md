@@ -42,6 +42,8 @@ brew cask install iterm2
 brew cask install shiftit
 brew cask install yujitach-menumeters
 brew cask install trolcommander
+
+brew cask install postman
 ```
 
 ### Productivity
@@ -74,27 +76,17 @@ omf install bobthefish
 omf reload
 ```
 
-### VLC and file associations
+### Video player and file associations
 ```
-brew cask install vlc
+brew cask install mpv
 brew install duti
-duti -s org.videolan.vlc .mkv all
-duti -s org.videolan.vlc .avi
-duti -s org.videolan.vlc .mp4
+duti -s io.mpv mkv all
+duti -s io.mpv avi all
+duti -s io.mpv mp4 all
 ```
 
-### Transmission and Transmission remote GUI
-```
-brew tap caskroom/cask
-brew cask install transmission-remote-gui
-```
-
-
-
+### Transfer files between Mac and Android devices
 https://www.android.com/filetransfer/
-
-
-
 
 ### EncFS cross-platform and cloud-friendly folder encryption
 ```
@@ -156,6 +148,11 @@ atom           github         macvim         skype          textmate
 dash           intellij-idea  postman        slack          viber
 firefox        java8          rowanj-gitx    sourcetree     virtualbox
 flycut         macdown        shiftit        sublime-text   zoomus
+```
+
+# Git pretty log:
+```
+git config --global alias.plog "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
 
 # Links
